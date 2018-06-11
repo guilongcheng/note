@@ -1,0 +1,880 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\end_preamble
+\options UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package none
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format pdf4
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The below text refers to if we add 
+\begin_inset Quotes eld
+\end_inset
+
+adobefonts
+\begin_inset Quotes erd
+\end_inset
+
+ to the custom class options.
+ The text is outdated and will be updated to reflect this change soon.
+ The change was made because we no longer need proprietary fonts to compile
+ this document.
+ For example, it can be compiled with out-of-the-box TeX Live 2015.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+这是一份文章模板，如果要使用书籍或报告，请设置文档类为
+\family sans
+book (C\SpecialChar TeX
+)
+\family default
+或者
+\family sans
+report (C\SpecialChar TeX
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+3p0模型计算
+\end_layout
+
+\begin_layout Author
+桂龙成
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+强子波函数
+\end_layout
+
+\begin_layout Subsection
+质心系下的重子波函数
+\end_layout
+
+\begin_layout Standard
+在非相对论夸克模型下，波函数可以写成
+\begin_inset Formula 
+\begin{equation}
+|n^{2S+1}L_{J}(\vec{p})\rangle=C_{A}\sum\phi\chi\psi(\vec{p})
+\end{equation}
+
+\end_inset
+
+其中
+\begin_inset Formula $\phi$
+\end_inset
+
+为味道波函数，
+\begin_inset Formula $\chi$
+\end_inset
+
+为自旋波函数，
+\begin_inset Formula $\psi(\vec{p})$
+\end_inset
+
+为空间波函数，
+\begin_inset Formula $C_{A}$
+\end_inset
+
+为单态色波函数。考虑到整体需要满足狄拉克-费米统计，因颜色空间为色单态反对称，故重子波函数需要满足全对称。也就是说这三组波函数对于相同的夸克属于交换群
+\begin_inset Formula $S_{3}$
+\end_inset
+
+的表示。对于三个粒子的交换群
+\begin_inset Formula $S_{3}$
+\end_inset
+
+有三组不可约表示，两个一维的表示，分别为对称表示
+\begin_inset Formula $A$
+\end_inset
+
+和反对称表示
+\begin_inset Formula $S$
+\end_inset
+
+。一个二维的混合对称表示
+\begin_inset Formula $M$
+\end_inset
+
+，其包含两个状态
+\begin_inset Formula $M^{\rho}$
+\end_inset
+
+和
+\begin_inset Formula $M^{\lambda}$
+\end_inset
+
+。如
+\begin_inset Formula $(12)M^{\rho}=-M^{\rho}$
+\end_inset
+
+,
+\begin_inset Formula $(12)M^{\lambda}=M^{\lambda}$
+\end_inset
+
+,
+\begin_inset Formula $(13)M^{\rho}=M^{\rho}/2-\sqrt{3}M^{\lambda}/2$
+\end_inset
+
+,
+\begin_inset Formula $(13)M^{\lambda}=-\sqrt{3}M^{\rho}/2-M^{\lambda}/2$
+\end_inset
+
+。总体我们需要组合这三组波函数使得其在交换相同粒子时满足全对称。（这里所说的相同粒子，可以近似具有相同质量，如
+\begin_inset Formula $u,d,s$
+\end_inset
+
+。当然也可以认为
+\begin_inset Formula $s$
+\end_inset
+
+破坏比较大,只考虑
+\begin_inset Formula $u,d$
+\end_inset
+
+的对称性。）
+\end_layout
+
+\begin_layout Subsubsection
+径向波函数
+\end_layout
+
+\begin_layout Standard
+通过引入雅可比坐标
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\rho & =\frac{1}{\sqrt{2}}(r_{1}-r_{2}) & r_{1} & =\sqrt{\frac{3}{2}}\frac{m_{3}}{m_{1}+m_{2}+m_{3}}\lambda+\sqrt{2}\frac{m_{2}}{m_{1}+m_{2}}\rho+\frac{R}{\sqrt{3}}\\
+\lambda & =\sqrt{\frac{2}{3}}(\frac{m_{1}r_{1}+m_{2}r_{2}}{m_{1}+m_{2}}-r_{3}) & r_{2} & =\sqrt{\frac{3}{2}}\frac{m_{3}}{m_{1}+m_{2}+m_{3}}\lambda-\sqrt{2}\frac{m_{1}}{m_{1}+m_{2}}\rho+\frac{R}{\sqrt{3}}\\
+R & =\sqrt{3}\frac{m_{1}r_{1}+m_{2}r_{2}+m_{3}r_{3}}{m_{1}+m_{2}+m_{3}} & r_{3} & =\frac{2R(m_{1}+m_{2}+m_{3})-3\sqrt{2}\lambda(m_{1}+m_{2})}{2\sqrt{3}(m_{1}+m_{2}+m_{3})}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+引入约化质量
+\begin_inset Formula $m_{\rho}=\frac{2m_{1}m_{2}}{m_{1}+m_{2}},m_{\lambda}=\frac{3}{2}\frac{m_{1}+m_{2}}{m_{1}+m_{2}+m_{3}}m_{3}$
+\end_inset
+
+从而对应的动量为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p_{\rho} & =\frac{1}{\sqrt{2}}(\frac{m_{\rho}}{m_{1}}p_{1}-\frac{m_{\rho}}{m_{2}}p_{2})=\frac{1}{\sqrt{2}}(\frac{m_{2}p_{1}-m_{1}p_{2}}{m_{1}+m_{2}})\\
+p_{\lambda} & =\sqrt{\frac{2}{3}}(\frac{m_{\lambda}}{m_{1}+m_{2}}(p_{1}+p_{2})-\frac{m_{\lambda}}{m_{3}}p_{3})=\sqrt{\frac{2}{3}}(\frac{m_{3}(p_{1}+p_{2})-(m_{1}+m_{2})p_{3}}{m_{1}+m_{2}+m_{3}})\\
+\mathcal{P} & =\sqrt{3}(p_{1}+p_{2}+p_{3})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+反解出
+\begin_inset Formula $p_{1},p_{2},p_{3}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p_{1} & =\frac{1}{\sqrt{3}}\frac{m_{1}}{m_{1}+m_{2}+m_{3}}\mathcal{P}+\sqrt{\frac{3}{2}}\frac{m_{1}}{m_{1}+m_{2}}p_{\lambda}+\sqrt{2}p_{\rho}\\
+p_{2} & =\frac{1}{\sqrt{3}}\frac{m_{2}}{m_{1}+m_{2}+m_{3}}\mathcal{P}+\sqrt{\frac{3}{2}}\frac{m_{2}}{m_{1}+m_{2}}p_{\lambda}-\sqrt{2}p_{\rho}\\
+p_{3} & =\frac{1}{\sqrt{3}}\frac{m_{3}}{m_{1}+m_{2}+m_{3}}\mathcal{P}-\sqrt{\frac{3}{2}}p_{\lambda})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(错误：注意，只有当两个夸克质量相近时，取
+\begin_inset Formula $m_{1}=m_{2}$
+\end_inset
+
+,此时薛定谔方程才能化成变量分离的相对动量形式,更正：质量不相同一样可以进行变量分离，定义
+\begin_inset Formula $p_{\rho}$
+\end_inset
+
+和
+\begin_inset Formula $p_{\lambda}$
+\end_inset
+
+。但是这时波函数的交换对称性会破坏。例如包含s夸克时，
+\begin_inset Formula $u,d$
+\end_inset
+
+的交换还是可以考虑其交换对称性，这时系统的对称性降低了。
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FLAMM"
+
+\end_inset
+
+第261页)，此时薛定谔方程中的
+\begin_inset Formula $P=\mathcal{P}/\sqrt{3}$
+\end_inset
+
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+H & = & \frac{P^{2}}{2M}+\frac{p_{\rho}^{2}}{2m_{\rho}}+\frac{p_{\lambda}^{2}}{2m_{\lambda}}+\frac{3}{2}K(\rho^{2}+\lambda^{2})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+取
+\begin_inset Formula $\beta_{\rho}=\sqrt{3K/m_{\rho}},\beta_{\lambda}=\sqrt{3K/m_{\lambda}}$
+\end_inset
+
+.则对应的径向重子波函数为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Psi(\vec{P_{A})}=N\psi_{n_{\rho_{A}}L_{\rho_{A}}M_{L_{\rho_{A}}}}(\vec{p}_{\rho_{A}})\psi_{n_{\lambda_{A}}L_{\lambda_{A}}M_{L_{\lambda_{A}}}}(\vec{p}_{\lambda_{A}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\psi_{nLM_{L}}(\vec{p}) & = & (-1)^{n}(-i)^{L}\sqrt{\frac{2n!}{\Gamma(n+L+3/3)}}\times\frac{1}{\beta^{3/2}}(\frac{p}{\beta})^{L}exp(-\frac{p^{2}}{2\beta^{2}})L_{n}^{L+1/2}(\frac{p^{2}}{\beta^{2}})Y_{LM_{L}}(\Omega_{p})\\
+ & = & \phi_{nL}(p)Y_{LM_{L}}(\Omega_{p})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+其中角动量的耦合关系为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+|J,M_{J}\rangle & = & \sum\langle S,M_{S};L,M_{L}|J,M_{J}\rangle|S,M_{S}\rangle|L,M_{L}\rangle\\
+ & = & \sum_{M_{S},M_{L}}\langle S,M_{s};L,M_{L}|J,M_{J}\rangle\sum_{M_{S_{12}},M_{S_{3}}}\langle S_{12},M_{s_{12}};S_{3},M_{s_{3}}|S,M_{S}\rangle|S_{12},M_{S_{12}};S_{3},M_{S_{3}}\rangle\\
+ & \times & \sum_{M_{L_{\rho}}M_{L_{\lambda}}}\langle L_{\rho},M_{L_{\rho}};L_{\lambda},M_{L_{\lambda}}|L,M_{L}\rangle|L_{\rho},M_{L_{\rho}};L_{\lambda},M_{L_{\lambda}}\rangle
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+自旋波函数
+\end_layout
+
+\begin_layout Standard
+三个粒子的自旋波函数
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{2}\bigotimes\frac{1}{2}\bigotimes\frac{1}{2}=(1\bigoplus0)\bigotimes\frac{1}{2}=(\frac{3}{2}\bigoplus[\frac{1}{2}]_{\rho})\bigoplus[\frac{1}{2}]_{\lambda}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+味道波函数
+\end_layout
+
+\begin_layout Standard
+对于不包含奇异夸克的情况，其味道波函数类似于自旋波函数，如混合对称或者全对称。
+\end_layout
+
+\begin_layout Standard
+对于包含奇异夸克的情况，只需要考虑
+\begin_inset Formula $u,d$
+\end_inset
+
+的情况即可。
+\end_layout
+
+\begin_layout Subsubsection
+对称性的组合关系
+\end_layout
+
+\begin_layout Standard
+为了组合总体波函数，可以方便的使用如下的组合方式
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}\frac{1}{\sqrt{2}}(M^{\rho}M^{\rho}+M^{\lambda}M^{\lambda}) & =S\\
+\frac{1}{\sqrt{2}}(M^{\rho}M^{\lambda}-M^{\lambda}M^{\rho}) & =A\\
+\frac{1}{\sqrt{2}}(M^{\rho}M^{\lambda}+M^{\lambda}M^{\rho}) & =M^{\rho}\\
+\frac{1}{\sqrt{2}}(M^{\rho}M^{\rho}-M^{\lambda}M^{\lambda}) & =M^{\lambda}
+\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+动量因子的关系
+\end_layout
+
+\begin_layout Standard
+这里主要给出如果动量定义差一些因子，对波函数带来的影响。我们知道对于谐振子势的薛定谔方程为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H=\frac{p^{2}}{2\mu}+\frac{1}{2}Kx^{2}=\frac{p^{2}}{2\mu}+\frac{1}{2}\mu\alpha^{2}x^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+三维情况下的径向方程为
+\begin_inset Formula 
+\[
+R_{l}^{''}+\frac{2}{r}R_{l}^{'}+[2\mu(E-\frac{1}{2}\mu\alpha^{2}r)-\frac{l(l+1)}{r^{2}}]R_{l}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+其中
+\begin_inset Formula $\alpha=\sqrt{K/\mu}$
+\end_inset
+
+。若
+\begin_inset Formula $p^{'}=k*p$
+\end_inset
+
+,则相当于
+\end_layout
+
+\begin_layout Subsubsection
+S波重子波函数
+\end_layout
+
+\begin_layout Standard
+对于核子及
+\begin_inset Formula $\Delta$
+\end_inset
+
+基态，其空间波函数为全对称，故自旋和味道波函数需要组合成全对称即
+\begin_inset Formula $\frac{1}{\sqrt{2}}(\phi^{\rho}\chi^{\rho}+\phi^{\lambda}\chi^{\lambda})$
+\end_inset
+
+,故表示为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}|N^{2}S_{S}\frac{1}{2}^{+}\rangle & =C_{A}\psi_{00}^{S}\frac{1}{\sqrt{2}}(\phi_{N}^{\rho}\chi_{\frac{1}{2}}^{\rho}+\phi_{N}^{\lambda}\chi_{\frac{1}{2}}^{\lambda})\\
+|\Delta^{4}S_{S}\frac{3}{2}^{+}\rangle & =C_{A}\phi_{\Delta}^{S}\psi_{00}^{S}\chi_{\frac{3}{2}}^{S}
+\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+标记意义为
+\begin_inset Formula $|X^{2S+1}L_{\pi}J^{P}\rangle$
+\end_inset
+
+,其中
+\begin_inset Formula $\pi$
+\end_inset
+
+代表交换对称性。省略了CG系数及磁量子数。
+\end_layout
+
+\begin_layout Standard
+对于含有奇异夸克的重子，由于具有质量差异，其空间波函数不再是全对称的。这时主要考虑两味轻夸克的交换对称性。这时需要自旋和味道对两个轻味夸克交换对称即可。
+\end_layout
+
+\begin_layout Subsubsection
+P波重子波函数
+\end_layout
+
+\begin_layout Standard
+对于不含奇异夸克的负宇称P波激发态，其波函数可写为
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}|N^{4}P_{M}(\frac{1}{2}^{-},\frac{3}{2}^{-},\frac{5}{2}^{-})\rangle & =C_{A}\chi_{\frac{3}{2}}^{S}\frac{1}{\sqrt{2}}(\phi_{N}^{\rho}\psi_{1M}^{M_{\rho}}+\phi_{N}^{\lambda}\psi_{1M}^{M_{\lambda}})\\
+|N^{2}P_{M}(\frac{1}{2}^{-},\frac{3}{2}^{-})\rangle & =C_{A}\frac{1}{2}[\phi_{N}^{\rho}(\psi_{1M}^{M_{\rho}}\chi_{\frac{1}{2}}^{\lambda}+\psi_{1M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\rho})+\phi_{N}^{\lambda}(\psi_{1M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\rho}-\psi_{1M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\lambda})]\\
+|\Delta^{2}P_{M}(\frac{1}{2}^{-},\frac{3}{2}^{-})\rangle & =C_{A}\phi_{\Delta}^{S}\frac{1}{\sqrt{2}}(\psi_{1M}^{M_{\rho}}\chi_{\frac{1}{2}}^{\rho}+\psi_{1M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\lambda})
+\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+D波重子波函数
+\end_layout
+
+\begin_layout Standard
+对于第二激发带，这里可以有轨道激发和径向激发，对于轨道激发，又可以分为
+\begin_inset Formula $(l_{\rho},l_{\lambda})=(0,2)$
+\end_inset
+
+或
+\begin_inset Formula $(2,0)$
+\end_inset
+
+，即
+\begin_inset Formula $(56,2_{2}^{+})$
+\end_inset
+
+。又或者
+\begin_inset Formula $(l_{\rho},l_{\lambda})=(1,1)$
+\end_inset
+
+，使得
+\begin_inset Formula $L=0,1,2$
+\end_inset
+
+，即
+\begin_inset Formula $(70,0_{2}^{+})$
+\end_inset
+
+,
+\begin_inset Formula $(20,1_{2}^{+})$
+\end_inset
+
+,
+\begin_inset Formula $(70,2_{2}^{+})$
+\end_inset
+
+。对于径向激发可以有
+\begin_inset Formula $(n_{\rho},n_{\lambda})=(0,1)$
+\end_inset
+
+或
+\begin_inset Formula $(1,0)$
+\end_inset
+
+，即
+\begin_inset Formula $(56,0_{2}^{+})$
+\end_inset
+
+。这里我们只考虑
+\begin_inset Formula $(l_{\rho},l_{\lambda})=(0,2)$
+\end_inset
+
+或
+\begin_inset Formula $(2,0)$
+\end_inset
+
+的情况即
+\begin_inset Formula $(56,2_{2}^{+})$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+对于三个夸克质量相等的情况，其波函数可写成
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}\begin{aligned}|N^{4} & D_{M}\end{aligned}
+(\frac{1}{2}^{+},\frac{3}{2}^{+},\frac{5}{2}^{+},\frac{7}{2}^{+})\rangle & =C_{A}\chi_{\frac{3}{2}}^{S}\frac{1}{\sqrt{2}}(\phi_{N}^{\rho}\psi_{2M}^{M_{\rho}}+\phi_{N}^{\lambda}\psi_{2M}^{M_{\lambda}})\\
+\begin{aligned}|N^{2} & D_{M}\end{aligned}
+(\frac{3}{2}^{+},\frac{5}{2}^{+})\rangle & =C_{A}\frac{1}{2}[\phi_{N}^{\rho}(\psi_{2M}^{M_{\rho}}\chi_{\frac{1}{2}}^{\lambda}+\psi_{2M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\rho})+\phi_{N}^{\lambda}(\psi_{2M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\rho}-\psi_{2M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\lambda})]\\
+|\Delta^{2}D_{M}(\frac{1}{2}^{-},\frac{3}{2}^{-})\rangle & =C_{A}\phi_{\Delta}^{S}\frac{1}{\sqrt{2}}(\psi_{2M}^{M_{\rho}}\chi_{\frac{1}{2}}^{\rho}+\psi_{2M}^{M_{\lambda}}\chi_{\frac{1}{2}}^{\lambda})
+\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $^{3}P_{0}$
+\end_inset
+
+衰变
+\end_layout
+
+\begin_layout Subsection
+介子到双重子过程中的动量关系
+\end_layout
+
+\begin_layout Standard
+假设初始粒子为A粒子，衰变到末态两个重子BC。A粒子两个夸克标记为1，2。B粒子的三个夸克标记为1，3，5。C粒子的三个反夸克标记为2，4，6。其中
+\begin_inset Formula $M_{A}=m_{1}+m_{2},M_{B}=m_{1}+m_{3}+m_{5},M_{C}=m_{2}+m_{4}+m_{6}$
+\end_inset
+
+。则有如下关系（这里一些相对动量的总体符号并不影响最后结果。）
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathcal{P}_{A} & =\sqrt{3}(p_{1}+p_{2})=0; & p^{A} & =\frac{1}{2}(\frac{m_{1}p_{2}-m_{2}p_{1}}{m_{1}+m_{2}})=\frac{1}{2}p_{1}\\
+\mathcal{P}_{C} & =\sqrt{3}(p_{2}+p_{4}+p_{6}) & \mathcal{P}_{B} & =\sqrt{3}(p_{1}+p_{3}+p_{5})\\
+p_{\lambda}^{B} & =\sqrt{\frac{2}{3}}(\frac{m_{1}(p_{3}+p_{5})-(m_{3}+m_{5})p_{1}}{M_{B}}) & p_{\rho}^{B} & =\frac{1}{\sqrt{2}}(\frac{m_{3}p_{5}-m_{5}p_{3}}{m_{3}+m_{5}})\\
+p_{\lambda}^{C} & =\sqrt{\frac{2}{3}}(\frac{m_{2}(p_{4}+p_{6})-(m_{4}+m_{6})p_{2}}{M_{C}})=-p_{\lambda}^{B} & p_{\rho}^{C} & =\frac{1}{\sqrt{2}}(\frac{m_{6}p_{4}-m_{4}p_{6}}{m_{4}+m_{6}})=p_{\rho}^{B}\\
+p_{1} & =\sqrt{\frac{1}{3}}\frac{m_{1}}{M_{B}}\mathcal{P}_{B}-\sqrt{\frac{3}{2}}p_{\lambda}^{B} & p_{3} & =\sqrt{\frac{1}{3}}\frac{m_{3}}{M_{B}}\mathcal{P}_{B}+\sqrt{\frac{3}{2}}\frac{m_{3}}{m_{3}+m_{5}}p_{\lambda}^{B}-\sqrt{2}p_{\rho}^{B}\\
+p_{5} & =\sqrt{\frac{1}{3}}\frac{m_{5}}{M_{B}}\mathcal{P}_{B}+\sqrt{\frac{3}{2}}\frac{m_{3}}{m_{3}+m_{5}}p_{\lambda}^{B}+\sqrt{2}p_{\rho}^{B} & p_{3} & =-p_{4},\ \ p_{5}=-p_{6}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+从而可以得到3p0模型计算中的动量积分表达式为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+I_{n_{B}L_{B}M_{L_{B}}n_{C}L_{C}M_{L_{C}}}^{n_{A}L_{A}M_{L_{A}}M_{1}M_{2}} & =\int d^{3}p_{1}d^{3}p_{2}d^{3}p_{3}d^{3}p_{4}d^{3}p_{5}d^{3}p_{6}\delta^{3}(p_{1}+p_{2})\delta^{3}(p_{3}+p_{4})\delta^{3}(p_{5}+p_{6})\\
+\times & \delta^{3}(\mathcal{P}_{B}-p_{1}-p_{3}-p_{5})\Psi_{A}(\vec{p}_{1},\vec{p}_{2})\Psi_{B}^{*}(\vec{p}_{1},\vec{p}_{2},\vec{p}_{3})\Psi_{C}^{*}(\vec{p}_{2},\vec{p}_{4},\vec{p}_{6})\\
+= & \int\vec{p}_{\rho}^{B}\vec{p}_{\lambda}^{C}|J|\Psi_{A}(\vec{P}_{B},\vec{p}_{\lambda}^{B})\Psi_{B}(\vec{P}_{B},\vec{p}_{\lambda}^{B},\vec{p}_{\rho}^{B})\Psi_{C}(\vec{P}_{B},\vec{p}_{\lambda}^{B},\vec{p}_{\rho}^{B})\\
+= & \int dp_{\rho}^{B}dp_{\lambda}^{B}d\Omega_{\rho}d\Omega_{\lambda}|J|\phi_{n_{A}L_{A}}(\frac{m_{1}}{2\sqrt{3}M_{B}}\mathcal{P}_{B}-\sqrt{\frac{1}{6}}p_{\lambda}^{B})Y_{L_{A}M_{L_{A}}(\Omega_{p_{A})}}\\
+\times & \phi_{n_{B}L_{B}}(p_{\rho}^{B},p_{\lambda}^{B})Y_{L_{B}M_{L_{B}}}(\Omega_{\rho})Y_{L_{B}M_{L_{B}}}(\Omega_{\lambda})\phi_{n_{C}L_{C}}(p_{\rho}^{B},p_{\lambda}^{B})Y_{L_{C}M_{L_{C}}}(\Omega_{\rho})Y_{L_{C}M_{L_{C}}}(\Omega_{\lambda})\\
+\times & \mathcal{Y}_{1}^{M_{1}}(\frac{m_{3}}{\sqrt{6}M_{B}}\mathcal{P}_{B}+\sqrt{\frac{1}{3}}\frac{m_{3}}{m_{3}+m_{5}}p_{\lambda}^{B}-p_{\rho}^{B})\\
+\times & \mathcal{Y}_{1}^{M_{2}}(\frac{m_{5}}{\sqrt{6}M_{B}}\mathcal{P}_{B}+\sqrt{\frac{1}{3}}\frac{m_{3}}{m_{3}+m_{5}}p_{\lambda}^{B}+p_{\rho}^{B})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+其中|J|为变换的雅可比行列式。
+\end_layout
+
+\begin_layout Subsection
+重子到重子+介子的强衰变过程
+\end_layout
+
+\begin_layout Standard
+这里也给出重子的3p0衰变过程中的各种动量关系。如果所有夸克质量都相同，那么下面两种方式
+\end_layout
+
+\begin_layout Subsubsection
+123-134+25
+\end_layout
+
+\begin_layout Standard
+假设初态粒子的内部的夸克编号为1，2，3。末态介子的标号为2，5。末态重子的编号为1，3，4(这里的编号与文献
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhao2017"
+
+\end_inset
+
+的标记一样)。则有(末态14组合成
+\begin_inset Formula $\rho$
+\end_inset
+
+模式)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathcal{P}_{A} & =\sqrt{3}(p_{1}+p_{2}+p_{3}) & p_{\rho}^{A} & =\frac{1}{\sqrt{2}}(\frac{m_{1}p_{2}-m_{2}p_{1}}{m_{1}+m_{2}})\\
+p_{\lambda}^{A} & =\sqrt{\frac{2}{3}}(\frac{m_{3}(p_{1}+p_{2})-(m_{1}+m_{2})p_{3}}{M_{A}}) & \mathcal{P}_{B} & =\sqrt{3}(p_{1}+p_{3}+p_{4})\\
+p_{\rho}^{B} & =\frac{1}{\sqrt{2}}(\frac{m_{1}p_{1}-m_{4}p_{4}}{m_{1}+m_{4}}) & p_{\lambda}^{B} & =\sqrt{\frac{2}{3}}(\frac{m_{3}(p_{1}+p_{4})-(m_{1}+m_{4})p_{3}}{M_{B}})\\
+\mathcal{P}_{C} & =\sqrt{3}(p_{2}+p_{5}) & p^{C} & =\frac{1}{2}(\frac{m_{2}p_{5}-m_{5}p_{2}}{M_{C}})\\
+p_{1} & =\sqrt{\frac{3}{2}}\frac{m_{1}}{m_{1}+m_{2}}p_{\lambda}^{A}-\sqrt{2}p_{\rho}^{A} & p_{2} & =\sqrt{\frac{3}{2}}\frac{m_{1}}{m_{1}+m_{2}}p_{\lambda}^{A}+\sqrt{2}p_{\rho}^{A}\\
+p_{3} & =-\sqrt{\frac{3}{2}}p_{\lambda}^{A} & p_{4} & =\frac{\mathcal{P}_{B}}{\sqrt{3}}+\sqrt{\frac{3}{2}}\frac{m_{2}p_{\lambda}^{A}}{m_{1}+m_{2}}+\sqrt{2}p_{\rho}^{A}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+从而可以得到3p0模型计算中的动量积分表达式为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+I_{n_{B}L_{B}M_{L_{B}}n_{C}L_{C}M_{L_{C}}}^{n_{A}L_{\rho}^{A},M_{L_{\rho}^{A}},L_{\lambda}^{A},M_{L_{\lambda}^{A}}1M_{1}} & =\int d^{3}p_{1}d^{3}p_{2}d^{3}p_{3}d^{3}p_{4}d^{3}p_{5}\delta^{3}(p_{1}+p_{2}+p_{3})\delta^{3}(p_{4}+p_{5})\\
+\times & \delta^{3}(\mathcal{P}_{B}-p_{1}-p_{3}-p_{4})\Psi_{A}(\vec{p}_{1},\vec{p}_{2},\vec{p}_{3})\Psi_{B}^{*}(\vec{p}_{1},\vec{p}_{3},\vec{p}_{4})\Psi_{C}^{*}(\vec{p}_{2},\vec{p}_{5})\\
+= & \int\vec{p}_{\rho}^{B}\vec{p}_{\lambda}^{C}|J|\Psi_{A}(\vec{p}_{\lambda}^{A},\vec{p}_{\rho}^{A})\Psi_{B}(\vec{P}_{B},\vec{p}_{\lambda}^{A},\vec{p}_{\rho}^{A})\Psi_{C}(-\vec{P}_{B},\vec{p}_{\lambda}^{A},\vec{p}_{\rho}^{A})\\
+= & \int dp_{\rho}^{A}dp_{\lambda}^{A}d\Omega_{\rho}^{A}d\Omega_{\lambda}^{A}|J|\\
+\times & \phi_{n_{A}L_{\rho}^{A}}(p_{\rho}^{A})Y_{L_{\rho}^{A}M_{L_{\rho}^{A}}}(\Omega_{\rho})\phi_{n_{A}L_{\lambda}^{A}}(p_{\lambda}^{A})Y_{L_{\lambda}^{A}M_{L_{\lambda}^{A}}}(\Omega_{\lambda})\\
+\times & \phi_{n_{B}L_{\rho}^{B}}(\frac{3\sqrt{3}\left(m_{1}^{2}-m_{2}m_{4}\right)p_{\lambda}-\left(m_{1}+m_{2}\right)\left(\sqrt{6}m_{4}\mathcal{P}_{B}+6\left(m_{1}+m_{4}\right)p_{\rho}\right)}{6\left(m_{1}+m_{2}\right)\left(m_{1}+m_{4}\right)})Y_{L_{B}M_{L_{B}}}(\Omega_{\rho}^{B})\\
+\times & \phi_{n_{B}L_{\lambda}^{B}}(p_{\lambda}^{A}+\frac{\sqrt{2}\mathcal{P}_{B}m_{3}}{3(m_{3}+m_{1}+m_{2})})Y_{L_{B}M_{L_{B}}}(\Omega_{\lambda}^{B})\\
+\times & \phi_{n_{C}L_{C}}(\frac{1}{12}\left(\frac{-3\sqrt{6}m_{2}p_{\lambda}-6\sqrt{2}\left(m_{1}+m_{2}\right)p_{\rho}}{m_{1}+m_{2}}-\frac{2\sqrt{3}m_{2}\mathcal{P}_{B}}{m_{2}+m_{5}}\right))Y_{L_{C}M_{L_{C}}}(\Omega_{\rho}^{C})\\
+\times & \mathcal{Y}_{1}^{M_{1}}(\frac{2\left(m_{1}+m_{2}\right)\left(\sqrt{3}\mathcal{P}_{B}+3\sqrt{2}p_{\rho}\right)+3\sqrt{6}m_{2}p_{\lambda}}{6\left(m_{1}+m_{2}\right)})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+123-124+35
+\end_layout
+
+\begin_layout Standard
+假设初态粒子的内部的夸克编号为1，2，3。末态介子的标号为3，5。末态重子的编号为1，2，4(这里的编号与文献
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhao2017"
+
+\end_inset
+
+的标记一样)。则有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathcal{P}_{A} & =\sqrt{3}(p_{1}+p_{2}+p_{3}) & p_{\rho}^{A} & =\frac{1}{\sqrt{2}}(\frac{m_{1}p_{2}-m_{2}p_{1}}{m_{1}+m_{2}})\\
+p_{\lambda}^{A} & =\sqrt{\frac{2}{3}}(\frac{m_{3}(p_{1}+p_{2})-(m_{1}+m_{2})p_{3}}{M_{A}}) & \mathcal{P}_{B} & =\sqrt{3}(p_{1}+p_{3}+p_{4})\\
+p_{\rho}^{B} & =\frac{1}{\sqrt{2}}(\frac{m_{1}p_{1}-m_{2}p_{2}}{m_{1}+m_{2}}) & p_{\lambda}^{B} & =\sqrt{\frac{2}{3}}(\frac{m_{4}(p_{1}+p_{2})-(m_{1}+m_{2})p_{4}}{M_{B}})\\
+\mathcal{P}_{C} & =\sqrt{3}(p_{3}+p_{5}) & p^{C} & =\frac{1}{2}(\frac{m_{3}p_{5}-m_{5}p_{3}}{M_{C}})\\
+p_{1} & =\sqrt{\frac{3}{2}}\frac{m_{1}}{m_{1}+m_{2}}p_{\lambda}^{A}-\sqrt{2}p_{\rho}^{A} & p_{2} & =\sqrt{\frac{3}{2}}\frac{m_{1}}{m_{1}+m_{2}}p_{\lambda}^{A}+\sqrt{2}p_{\rho}^{A}\\
+p_{3} & =-\sqrt{\frac{3}{2}}p_{\lambda}^{A} & p_{4} & =\frac{\mathcal{P}_{B}}{\sqrt{3}}-\sqrt{\frac{3}{2}}p_{\lambda}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+从而可以得到3p0模型计算中的动量积分表达式为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+I_{n_{B}L_{B}M_{L_{B}}n_{C}L_{C}M_{L_{C}}}^{n_{A}L_{\rho}^{A},M_{L_{\rho}^{A}},L_{\lambda}^{A},M_{L_{\lambda}^{A}}1M_{1}} & =\int d^{3}p_{1}d^{3}p_{2}d^{3}p_{3}d^{3}p_{4}d^{3}p_{5}\delta^{3}(p_{1}+p_{2}+p_{3})\delta^{3}(p_{4}+p_{5})\\
+\times & \delta^{3}(\mathcal{P}_{B}-p_{1}-p_{3}-p_{4})\Psi_{A}(\vec{p}_{1},\vec{p}_{2},\vec{p}_{3})\Psi_{B}^{*}(\vec{p}_{1},\vec{p}_{3},\vec{p}_{4})\Psi_{C}^{*}(\vec{p}_{2},\vec{p}_{5})\\
+= & \int\vec{p}_{\rho}^{B}\vec{p}_{\lambda}^{C}|J|\Psi_{A}(\vec{p}_{\lambda}^{A},\vec{p}_{\rho}^{A})\Psi_{B}(\vec{P}_{B},\vec{p}_{\lambda}^{A},\vec{p}_{\rho}^{A})\Psi_{C}(-\vec{P}_{B},\vec{p}_{\lambda}^{A},\vec{p}_{\rho}^{A})\\
+= & \int dp_{\rho}^{A}dp_{\lambda}^{A}d\Omega_{\rho}^{A}d\Omega_{\lambda}^{A}|J|\\
+\times & \phi_{n_{A}L_{\rho}^{A}}(p_{\rho}^{A})Y_{L_{\rho}^{A}M_{L_{\rho}^{A}}}(\Omega_{\rho})\phi_{n_{A}L_{\lambda}^{A}}(p_{\lambda}^{A})Y_{L_{\lambda}^{A}M_{L_{\lambda}^{A}}}(\Omega_{\lambda})\\
+\times & \phi_{n_{B}L_{\rho}^{B}}(p_{\rho}^{A})Y_{L_{B}M_{L_{B}}}(\Omega_{\rho}^{B})\phi_{n_{B}L_{\lambda}^{B}}(p_{\lambda}-\frac{\sqrt{2}\mathcal{P}_{B}(m_{1}+m_{2})}{3M_{B}})Y_{L_{B}M_{L_{B}}}(\Omega_{\lambda}^{B})\\
+\times & \phi_{n_{C}L_{C}}(\sqrt{\frac{3}{8}}p_{\lambda}-\frac{\mathcal{P}_{B}m_{3}}{2\sqrt{3}(m_{3}+m_{5})})Y_{L_{C}M_{L_{C}}}(\Omega_{\rho}^{C})\\
+\times & \mathcal{Y}_{1}^{M_{1}}(\frac{\mathcal{P}_{B}}{\sqrt{3}}-\sqrt{\frac{3}{2}}p_{\lambda})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在这种情况下，该过程的衰变振幅为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}A_{J_{B}M_{JB},J_{C}M_{JC}}^{J_{A}M_{JA},0,0} & =\sum\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+具体应用
+\end_layout
+
+\begin_layout Subsection
+粲偶素粒子的强衰变
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\Omega(2012)$
+\end_inset
+
+的强衰变
+\end_layout
+
+\begin_layout Standard
+对于该过程，首先我们考虑
+\begin_inset Formula $^{3}P_{0}$
+\end_inset
+
+过程中可能的图。这里夸克对可以在任意夸克间插入，其所有的可能见图.
+ 这里主要考虑拉开的夸克对从组成
+\begin_inset Formula $\rho$
+\end_inset
+
+结构的夸克对中间拉开，还是在
+\begin_inset Formula $\lambda$
+\end_inset
+
+中拉开。
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/Users/guilongcheng/Desktop/share/bibtex/library"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
