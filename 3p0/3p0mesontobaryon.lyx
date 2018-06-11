@@ -825,12 +825,28 @@ I_{n_{B}L_{B}M_{L_{B}}n_{C}L_{C}M_{L_{C}}}^{n_{A}L_{\rho}^{A},M_{L_{\rho}^{A}},L
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\begin{aligned}A_{J_{B}M_{JB},J_{C}M_{JC}}^{J_{A}M_{JA},0,0} & =\sum\end{aligned}
+\begin{aligned}A_{J_{B}M_{JB},J_{C}M_{JC}}^{J_{A}M_{JA},0,0} & =\sum\Psi_{A,M_{J_{A}}}^{N_{A}J_{A}L_{A}S_{A}}(\vec{0})\hat{T}\Psi_{B,M_{J_{B}}}^{N_{B}J_{B}L_{B}S_{B}}(\vec{P}_{B})\Psi_{C,M_{J_{C}}}^{N_{C}J_{C}L_{C}S_{C}}(-\vec{P}_{B})\\
+ & =\sum\phi_{A}^{S}\frac{1}{\sqrt{2}}(\chi_{A}^{\rho}\psi_{A}^{\rho}+\chi_{A}^{\lambda}\psi_{A}^{\lambda})\psi_{B}^{S}\frac{1}{\sqrt{2}}(\phi_{B}^{\lambda}\chi_{B}^{\lambda}+\phi_{B}^{\rho}\chi_{B}^{\rho})\phi_{C}\psi_{C}\chi_{C}\phi_{1}^{0}\chi_{1}^{-m}\mathcal{Y}_{1}^{m}\langle1m;1-m|00\rangle\\
+ & =\sum\frac{1}{\sqrt{2}}\phi_{A}^{S}\phi_{B}^{S}\phi_{C}\phi_{1}^{0}\chi_{A}^{\lambda}\chi_{B}^{S}\chi_{C}\chi_{1}^{-m}\psi_{A}^{\lambda}\psi_{B}^{S}\psi_{C}\mathcal{Y}_{1}^{m}\langle1m;1-m|00\rangle\\
+ & \psi^{n_{\rho}^{A}l_{\rho}^{A}m_{\rho}^{A}n_{\lambda}^{A}l_{\lambda}^{A}m_{\lambda}^{A}}(\vec{p}_{\rho},\vec{p}_{\lambda})
+\end{aligned}
 \end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+其中已经考虑了末态
+\begin_inset Formula $1,2$
+\end_inset
+
+粒子自旋为全对称，与初态粒子只有
+\begin_inset Formula $\chi_{A}^{\rho}$
+\end_inset
+
+才给出不为零的贡献。
 \end_layout
 
 \begin_layout Section
@@ -868,7 +884,7 @@ I_{n_{B}L_{B}M_{L_{B}}n_{C}L_{C}M_{L_{C}}}^{n_{A}L_{\rho}^{A},M_{L_{\rho}^{A}},L
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "/Users/guilongcheng/Desktop/share/bibtex/library"
+bibfiles "/Users/guilongcheng/Desktop/share/share/bibtex/library"
 options "plain"
 
 \end_inset
